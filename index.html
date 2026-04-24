@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saitamaar Typeset Editor</title>
+    <style>
+      body {
+        margin: 0;
+        background: #f3f4f6;
+        font-family: system-ui, sans-serif;
+      }
+      .wrap {
+        padding: 16px;
+      }
+      canvas {
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        display: block;
+      }
+      .hint {
+        font-size: 13px;
+        color: #111;
+        margin-top: 8px;
+        line-height: 1.5;
+      }
+      code {
+        background: rgba(0, 0, 0, 0.05);
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <canvas id="c" width="960" height="420"></canvas>
+      <div class="hint">
+        <div>박스 안 아무 곳이나 클릭/드래그할 수 있습니다. 겹치면 가장 위 오브젝트가 선택됩니다.</div>
+        <div>x는 1px 단위, y는 lineHeight 단위로 스냅됩니다.</div>
+        <div><code>Ctrl/Cmd + C</code>를 누르면 선택된 오브젝트가 유니코드 공백 prefix를 포함한 plain text로 복사됩니다.</div>
+        <div>한글 렌더링을 위해 <code>/assets/font/NanumGothicCoding.ttf</code> 파일이 필요합니다.</div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/app.ts"></script>
+  </body>
+</html>
